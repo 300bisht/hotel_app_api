@@ -17,6 +17,11 @@ class BookingsController < ApplicationController
     end
   end
 
+  def edit
+    @booking = Booking.find(params[:id])
+    render json: @booking
+  end7
+
   def index
     @bookings = Booking.where(user_id: params[:user_id])
     render json: @bookings
